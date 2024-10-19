@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import Navbar from './Layout/Navbar'
+import Footer from './Layout/Footer';
+import About from './component/About';
+import { PorfolioProvider } from './component/PorfolioContext';
 import './App.css';
+import Repos from './component/Repos';
 
 function App() {
   return (
+    <PorfolioProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div className='App-container w-screen flex flex-col justify-between h-screen'>
+        <Navbar/>
+        <main className='container mx-auto px-3 xl:px-55 pb-12'> 
+          <Routes>
+            <Route exact path='/' element={<About/>}/>
+            <Route exact path='/repos' element={<Repos/>}/>
+          </Routes>
+        </main>
+        <Footer/>
+        </div>
+
+      </Router>
     </div>
+    </PorfolioProvider>
   );
 }
 

@@ -1,13 +1,371 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Lemon&family=Rowdies:wght@300;400;700&display=swap');
+
+:root{
+    --primary:#DDD0C8;
+    --secondary:#323232;
+    --white: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App-container{
+    background-color: var(--primary);
+    overflow-x: hidden;
+    padding-bottom: 4rem;
+}
+/* logo */
+.logo {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+}
+/* navbar */
+.navbar{
+    background-color: var(--secondary);
+    position: sticky;
+    top: 0;
+}
+ul{
+    font-family: "DM Sans", sans-serif;
+}
+.liNav{
+    color:var(--white);
+    padding: 4px 8px;
+}
+.liNav:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+    transition: 700ms;
+    border-top-right-radius: 5px ;
+    border-bottom-left-radius: 5px ;
+}
+.Active{
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-top-right-radius: 5px ;
+    border-bottom-left-radius: 5px ;
+}
+.footer{
+    background-color: var(--secondary);
+    position:fixed;
+    bottom:0;
+}
+/* Mune */
+
+@media screen and (max-width:720px) {
+    .menu{
+        display: block;
+    }
+    .navbar{
+        justify-content: space-between;
+        padding-inline: 20px;
+    }
+    .navBar-container{
+        position: relative;
+        height: 100%;
+    }
+    #ul{
+        position: absolute;
+        top: 54px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+        background-color: var(--secondary);
+        padding: 20px 20px;
+        transform: translateX(-86%);
+        width: 50vw;
+    }
+    .Times, .Bars{
+        color: var(--white);
+        font-size: 1.5rem;
+    }
+    .menu{
+        display: flex;
+        align-items: center;
+    }
+    #ul.menuNotctive{
+        left: 150vw;
+        transition: 0.5s ease-in-out;
+    }
+    #ul.menuctive{
+        left: 100vw;
+        transition: 0.5s ease-in-out;
+    }
+}
+/* IMAGE */
+.imgContainer{
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.imgAvatar{
+    width: 100%;
+
+}
+/* reachout */
+.reachout{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+/* LINKS */
+.Mypro{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 25%;
+}
+.socialsUL li a{
+    font-size: 2.5rem;
+    color: var(--secondary)
+}
+.socialsUL{
+    gap:0.4rem;
+}
+
+/* About Text */
+.AboutText{
+    flex-direction: column;
+    width: 35%;
+    margin-top: 3rem;
+}
+.imaAm{
+    font-size: 2.2rem;
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+}
+.AboutText p{
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--secondary);
+}
+/* my name */
+.myNameY{
+    font-size: 8rem;
+    font-family: "Coiny", system-ui;
+    font-weight: 400;
+}
+.myname{
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+/* about main */
+.aboutmain{
+    gap: 10rem;
+    justify-content: center;
+}
+@media screen and (max-width:1528px) {
+    .imaAm{
+        font-size: calc(1.5vw + .4rem);
+    }
+    .AboutText p{
+        font-size: calc(0.5vw + .5rem);
+    }
+}
+@media screen and (max-width:1020px) {
+    /* text on about page */
+    .AboutText{
+        width: 60%;
+    }
+    .imaAm{
+        font-size: calc(1.7vw + 0.5rem);
+    }
+    .myNameY{
+        font-size: 6rem;
+    }
+    /* My profile image */
+    .Mypro{
+        width: 40%;
+    }
+    /* about main */
+    .aboutmain{
+        gap:6rem;
+    }
+}
+
+/* 720px media screen */
+@media screen and (max-width:620px) {
+.aboutmain{
+    flex-direction: column;
+    align-items: center;
+}
+.myNameY{
+    font-size: calc(8vw + 2rem);
+}
+.AboutText{
+    margin-top: 10px;
+}
+.aboutmain {
+    gap: 3rem;
+}
+.AboutText p{
+    font-size: calc(1vw + 0.5rem);
+}
+}
+/* 
+END OF ABOUT CSS AND BEGINNING OF REPOS CSS
+*/
+.circleDiv{
+    border-radius: 50%;
+}
+.imgFigure{
+    width: 100%;
+}
+.circleImage{
+    width: 100%;
+}
+.circlePro{
+    width: 20%;
+    overflow: hidden;
+}
+/* circle */
+
+
+/* card */
+
+.proCard{
+    padding: 1rem 0.5rem 0 0.5rem;
+    border-radius: 2% ;
+    box-shadow: 1px 2px  1px 6px rgba(202, 191, 185, 0.3);
+    background-color: rgba(202, 191, 185, 0.6);
+}
+.cardWidth{
+    width: 70%;
+    
+}
+.nameCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+    padding:  0.5rem;
+}
+span p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary);
+    font-family: "Rowdies", sans-serif;
+    font-size: 1.5rem;
+}
+.spanP{
+    border-right: 5px solid var(--primary);
+    padding-right: 0.7rem;
+    
+}
+.spanPgeneral{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Lemon", serif;
+    color: gray;
+}
+.profileIcons{
+    font-size:2.5rem ;
+    color: rgb(194, 66, 87);
+}
+input[type='tel']{
+    background: transparent;
+    
+}
+/* REPO ITEMS FROM FETCH STYLING */
+.reposList{
+    justify-content: flex-end;
+    
+}
+.repoItems-container{
+    width: 70%;
+    margin-right: 74px;
+}
+.cardRepo{
+    margin-top: 20px;
+}
+.repoConatainer{
+    margin-top: 5rem;
+}
+.repoLinks{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+.repoIconLink{
+    color: rgb(194, 66, 87);
+    font-size:calc(1.7rem + 0.4rem);
+    background-color: var(--secondary);
+    padding: 10px;
+}
+@media screen and (max-width:1535px) {
+    .repoItems-container{
+        margin-right: 2.7rem;
+    }
+}
+@media screen and (max-width:1279px) {
+    .spanPgeneral{
+        font-size: calc(0.6vw + 0.2rem);
+    }
+    span p{
+        font-size:calc(1.1vw + 0.1rem);
+    }
+    .profileIcons{
+        font-size: calc(1vw + 0.2rem);
+    }
+    .repoItems-container{
+        margin-right: 1.4rem;
+    }
+    
+}
+@media screen and (max-width:1024px) {
+    .circlePro{
+        width: 24%;
+        display: flex;
+        align-items: center;
+    }
+    .circleImage{
+        border-radius: 50%;
+    }
+    .repoItems-container{
+        margin-right: 0.3rem;
+        width: 68%;
+    }
+
+}
+@media screen and (max-width:1010px) {
+    .repoItems-container{
+        margin-right: 0.1rem;
+        width: 66%;
+    }
+}
+@media screen and (max-width:720px) {
+    .repoDetails{
+        flex-direction: column;
+        align-items:center;
+        gap: 2rem;
+    }
+    .circlePro{
+        width: 30%;
+    }
+    .cardWidth{
+        width: 90%;
+    }
+    span p {
+        font-size:calc(1.2vw + 0.15rem);
+    }
+    .repoItems-container{
+        width: 89%;
+        margin-right: 0;
+    }
+    .reposList{
+        justify-content: center;
+        
+    }
 }
